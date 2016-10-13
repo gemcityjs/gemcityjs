@@ -1,28 +1,29 @@
 <section class="upcoming">
-  {{#each meetings}}
-    {{#is when "next"}}
-      <article class="next-meeting">
-        <h1>Next Meeting</h1>
-        <time>{{date}} @ {{meeting_time}}</time>
-        <p>{{{title}}}</p>
-        <ul class="links">
-        {{#if twitter }}
-          <li class="link-item">
-            <a class="link-twitter" href="//twitter.com/{{twitter}}">@{{twitter}}</a>
-          </li>
-        {{/if}}
-          <li class="link-item">
-            <a href="{{rsvp_link}}">RSVP</a>
-          </li>
-        </ul>
-        <p class="lunch">{{food}}</p>
-      </article>
+  {{#eachDate meetings 'next' 'future' 'previous'}}
+    {{#is occuring 'next'}}
+    <article class="next-meeting">
+      <h1>Next Meeting</h1>
+      <time>{{date}} @ {{meeting_time}}</time>
+      <p>{{{title}}}</p>
+      <ul class="links">
+      {{#if twitter }}
+        <li class="link-item">
+          <a class="link-twitter" href="//twitter.com/{{twitter}}">@{{twitter}}</a>
+        </li>
+      {{/if}}
+        <li class="link-item">
+          <a href="{{rsvp_link}}">RSVP</a>
+        </li>
+      </ul>
+      <p class="lunch">{{food}}</p>
+    </article>
     {{/is}}
-  {{/each}}
+  {{/eachDate}}
+
 
   <div class="meeting-wrapper">
     {{#eachReverse meetings}}
-      {{#is when "upcoming"}}
+      {{#is occuring "future"}}
         <article>
           <h1>Upcoming Meeting</h1>
           <time>{{date}}</time>
@@ -37,7 +38,7 @@
   <h1>Past Meetings</h1>
   <div class="meeting-wrapper">
     {{#each meetings}}
-      {{#is when "past"}}
+      {{#is occuring "previous"}}
         <article>
           <time>{{date}}</time>
           <p>{{{title}}}</p>
