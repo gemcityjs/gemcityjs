@@ -42,3 +42,6 @@ autoprefixer:
 
 plugins:
   - jekyll-autoprefixer
+
+exclude:
+  - vendor
