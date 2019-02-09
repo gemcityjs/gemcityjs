@@ -1,5 +1,17 @@
 [
   {
+    "speaker": "Michael Bowman",
+    "title": "Data Visualization with React",
+    "date": "February 20, 2019 11:30 AM",
+    "rsvp": "https://www.meetup.com/Gem-City-JS/",
+    "link": [
+      {
+        "text": "@webslingerm",
+        "link": "https://twitter.com/webslingerm"
+      }
+    ]
+  },
+  {
     "speaker": "Mark Erikson",
     "title": "You Might Need Redux (And Its Ecosystem)",
     "date": "January 28, 2019 11:30 AM",
